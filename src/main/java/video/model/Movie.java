@@ -2,7 +2,6 @@ package video.model;
 
 import video.model.enums.MovieType;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,7 +47,7 @@ public class Movie {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "reserved_by")
-    private User user;
+    private Client client;
 
     @Column(name = "reservation_expires")
     private Date reservationExpires;
@@ -102,12 +100,12 @@ public class Movie {
         this.reserved = reserved;
     }
 
-    public User getUser() {
-        return user;
+    public Client getClient() {
+        return client;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public Date getReservationExpires() {

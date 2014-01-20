@@ -2,18 +2,22 @@ package video.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-public class User {
+@Entity
+@Table(name = "client")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)

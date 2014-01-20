@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS user (
+CREATE TABLE IF NOT EXISTS client (
   id SERIAL primary key,
   username varchar(255) NOT NULL,
   first_name varchar(255) DEFAULT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS user (
   birth_date date DEFAULT NULL,
   registered timestamp NOT NULL
 );
---rollback DROP TABLE user;
+--rollback DROP TABLE client;
 
 CREATE TABLE IF NOT EXISTS movie (
   id SERIAL primary key,
