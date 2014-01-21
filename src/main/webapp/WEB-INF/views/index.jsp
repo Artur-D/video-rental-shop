@@ -9,7 +9,6 @@
 
 
             <div class="form-actions">
-                </button>
             </div>
         </form:form>
     </jsp:body>

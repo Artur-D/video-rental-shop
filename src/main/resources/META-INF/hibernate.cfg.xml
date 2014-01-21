@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="hibernate.connection.profileSQL">false</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">org.springframework.orm.hibernate3.SpringSessionContext</property>
+
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">validate</property>
+
+        <!--  hibernate search configuration  -->
+        <property name="hibernate.search.default.directory_provider">filesystem</property>
+
+        <property name="hibernate.search.default.indexBase">/tmp/video_index</property>
+
+        <property name="hibernate.search.default.locking_strategy">native</property>
+        <!--
+        <property name="hibernate.search.indexing_strategy">manual</property>
+        -->
+
+        <mapping package="video.model"/>
+        <mapping class="video.model.Actor"/>
+        <mapping class="video.model.Client"/>
+        <mapping class="video.model.Director"/>
+        <mapping class="video.model.Movie"/>
+        <mapping class="video.model.enums.MovieType"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
