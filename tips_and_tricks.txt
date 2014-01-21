@@ -1,0 +1,31 @@
+### RUNNING
+1. mvn clean install
+2. java -jar target/dependency/jetty-runner.jar target/*.war
+
+### POSTGRESQL
+
+1. Init database by
+    initdb /usr/local/var/postgres -E utf8
+2. Start database server
+    a) postgres -D /usr/local/var/postgres
+
+    b) as documentation says "Without -D, the server will try to use the data directory named by the environment variable PGDATA. "
+    So set up the environment variable:
+        export PGDATA=/usr/local/var/postgres/
+    And then you can start it by simply doing
+        postgres
+
+3. Configuration file is then
+    /usr/local/var/postgres/pg_hba.conf
+4. Setting environment variable:
+    export DATABASE_URL=postgres://user:password@hostname:port/dbname
+in this case:
+    export DATABASE_URL=postgres://artur:video@localhost:5432/artur
+
+### TROUBLESHOOTING ###
+1. "psql: FATAL: database “<user>” does not exist"
+Try this at a shell prompt:
+    createdb
+and then see if you can log in again with
+    psql -h localhost
+
