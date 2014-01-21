@@ -33,7 +33,7 @@ public class Actor {
     @Column(name = "birth_date")
     private Date birthDate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "actor", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "actorsPlaying", cascade = CascadeType.ALL)
     @OrderBy("premiere")
     private List<Movie> moviesPlayed = new ArrayList<>();
 

@@ -46,14 +46,14 @@ public class Movie {
     private boolean reserved;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "reserved_by")
-    private Client client;
+    @JoinColumn(name = "reserved_by")
+    private Client reservedBy;
 
     @Column(name = "reservation_expires")
     private Date reservationExpires;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "director", nullable = false)
+    @JoinColumn(name = "actor", nullable = false)
     private List<Actor> actorsPlaying = new ArrayList<>();
 
     public Integer getId() {
@@ -100,12 +100,12 @@ public class Movie {
         this.reserved = reserved;
     }
 
-    public Client getClient() {
-        return client;
+    public Client getReservedBy() {
+        return reservedBy;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setReservedBy(Client reservedBy) {
+        this.reservedBy = reservedBy;
     }
 
     public Date getReservationExpires() {
@@ -114,5 +114,13 @@ public class Movie {
 
     public void setReservationExpires(Date reservationExpires) {
         this.reservationExpires = reservationExpires;
+    }
+
+    public List<Actor> getActorsPlaying() {
+        return actorsPlaying;
+    }
+
+    public void setActorsPlaying(List<Actor> actorsPlaying) {
+        this.actorsPlaying = actorsPlaying;
     }
 }

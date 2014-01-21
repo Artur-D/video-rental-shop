@@ -42,7 +42,7 @@ public class Client {
     @Column(name = "registered")
     private Date registered;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "reservedBy", cascade = CascadeType.ALL)
     @OrderBy("reservationExpires")
     private List<Movie> rentedMovies = new ArrayList<>();
 
