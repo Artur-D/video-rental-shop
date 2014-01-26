@@ -10,7 +10,7 @@
         <property name="hibernate.connection.profileSQL">false</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
         <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">org.springframework.orm.hibernate3.SpringSessionContext</property>
@@ -31,6 +31,10 @@
         <!--
         <property name="hibernate.search.indexing_strategy">manual</property>
         -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432</property>
+        <property name="hibernate.connection.username">artur</property>
+        <property name="hibernate.connection.password">video</property>
 
         <mapping package="video.model"/>
         <mapping class="video.model.Actor"/>
