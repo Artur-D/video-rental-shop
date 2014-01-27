@@ -10,12 +10,11 @@
         <property name="hibernate.connection.profileSQL">false</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
 
         <!-- Enable Hibernate's automatic session context management -->
-        <property name="current_session_context_class">org.springframework.orm.hibernate3.SpringSessionContext</property>
+        <property name="current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</property>
 
-        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">false</property>
 
