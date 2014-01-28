@@ -2,6 +2,9 @@
 1. mvn clean install
 2. java -jar target/dependency/jetty-runner.jar target/*.war
 
+### SPRING
+Spring MVC reference:
+    http://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/mvc.html
 ### POSTGRESQL
 
 1. Init database by
