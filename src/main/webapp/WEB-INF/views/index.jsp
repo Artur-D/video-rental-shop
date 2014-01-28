@@ -4,9 +4,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <jsp:body>
-        ${initParam.}
         <form:form action="index.html" modelAttribute="movie" id="movie" cssClass="form-horizontal">
-
+            <h1>oh hi</h1>
 
             <div class="form-actions">
             </div>

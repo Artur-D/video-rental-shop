@@ -11,15 +11,15 @@ import video.service.UserService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/welcome")
+@RequestMapping("/movie")
 public class MovieController {
 
-    @Autowired
+    //@Autowired
     UserService userService;
 
-    @RequestMapping(value = "index.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ModelAndView printMovies() {
         List<Movie> movies = userService.getAllMovies();
-        return new ModelAndView("moviesList", "movie", movies);
+        return new ModelAndView("index", "movie", movies);
     }
 }
